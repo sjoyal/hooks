@@ -16,7 +16,7 @@ export default function Summary() {
 
   const [counterState] = counter
   const [todosState] = todos
-  const hasTasks = todosState.tasks && !!todosState.tasks.length
+  const hasTasks = todosState.tasks && !!todosState.tasks.find(t => t.completed)
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function Summary() {
             </p>
             <p>
               <strong>Completed Todos:&nbsp;</strong>
-              {!hasTasks && 'No tasks yet!'}
+              {!hasTasks && 'No completed tasks yet!'}
             </p>
             {hasTasks && (
               <ol>

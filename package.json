@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --bail",
-    "serve": "http-server",
+    "serve": "node serve.js",
     "watch": "webpack --watch --progress"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.2",
+    "express": "^4.16.4",
     "prettier": "1.14.3",
     "webpack": "^4.18.0",
     "webpack-cli": "^3.0.3"
@@ -31,7 +32,6 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@reach/router": "^1.2.1",
-    "http-server": "^0.11.1",
     "prop-types": "^15.6.1",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0"
