@@ -1,33 +1,38 @@
 import createAction from './utils/createAction'
 
 export const add = createAction('hooks/todo/add')
-export const remove = createAction('hooks/todo/remove')
-export const reset = createAction('hooks/todo/reset')
+export const clear = createAction('hooks/todo/clear')
+export const complete = createAction('hooks/todo/complete')
 
-export const initialState = {
+const initialState = {
   tasks: [],
 }
 
-export function reducer(state, action) {
+function reducer(state, action) {
   let updatedState
 
   switch (action.type) {
-    case [add]:
+    case add.toCase():
       updatedState = {
         ...state,
-        tasks: [...state.tasks, action.payload],
+        tasks: [...state.tasks, { text: action.payload, completed: false }],
       }
       break
-    case [remove]:
-      updatedState = {
-        ...state,
-        tasks: state.tasks.filter(t => t !== action.payload),
-      }
-      break
-    case [reset]:
+    case clear.toCase():
       updatedState = {
         ...state,
         tasks: initialState.tasks,
+      }
+      break
+    case complete.toCase():
+      updatedState = {
+        ...state,
+        tasks: state.tasks.map(
+          t =>
+            t.text === action.payload.text
+              ? { ...t, completed: action.payload.completed }
+              : t,
+        ),
       }
       break
     default:

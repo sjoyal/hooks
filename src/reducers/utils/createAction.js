@@ -1,6 +1,7 @@
 export default function createAction(type) {
-  return payload => ({
-    type,
-    payload,
-  })
+  const actionCreator = payload => ({ type, payload })
+
+  actionCreator.toCase = () => type
+
+  return actionCreator
 }

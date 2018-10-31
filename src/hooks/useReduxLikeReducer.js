@@ -11,10 +11,13 @@ export default function useReduxLikeReducer(reducers) {
   const todosReducer = useReducer(todos.reducer, todos.initialState)
 
   const aggReducerMemo = useMemo(
-    () => ({
-      [GlobalReducerConstants.Counter]: counterReducer,
-      [GlobalReducerConstants.Todos]: todosReducer,
-    }),
+    () => {
+      console.log('Global store updated in context!')
+      return {
+        [GlobalReducerConstants.Counter]: counterReducer,
+        [GlobalReducerConstants.Todos]: todosReducer,
+      }
+    },
     [...counterReducer, ...todosReducer],
   )
 

@@ -1,27 +1,30 @@
 import createAction from './utils/createAction'
 
-export const increment = createAction('hooks/counter/increment')
 export const decrement = createAction('hooks/counter/decrement')
+export const increment = createAction('hooks/counter/increment')
 export const reset = createAction('hooks/counter/reset')
 
-export const initialState = {
+const initialState = {
   value: 0,
 }
 
-export function reducer(state, action) {
+function reducer(state, action) {
   let updatedState
 
   switch (action.type) {
-    case [increment]:
-      updatedState = { ...state, value: state.value + 1 }
+    case decrement.toCase():
+      updatedState = {
+        ...state,
+        value: state.value - 1,
+      }
       break
-    case [decrement]:
+    case increment.toCase():
       updatedState = {
         ...state,
         value: state.value + 1,
       }
       break
-    case [reset]:
+    case reset.toCase():
       updatedState = {
         ...state,
         value: initialState.value,
@@ -31,6 +34,8 @@ export function reducer(state, action) {
       updatedState = initialState
       break
   }
+
+  return updatedState
 }
 
 export default {

@@ -9,6 +9,7 @@ module.exports = {
   mode: 'none',
   resolve: {
     alias: {
+      constants: path.resolve(__dirname, 'src/constants'),
       context: path.resolve(__dirname, 'src/context'),
       hooks: path.resolve(__dirname, 'src/hooks'),
       reducers: path.resolve(__dirname, 'src/reducers'),
