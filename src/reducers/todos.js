@@ -1,4 +1,4 @@
-import createAction from './utils'
+import createAction from './utils/createAction'
 
 export const add = createAction('hooks/todo/add')
 export const remove = createAction('hooks/todo/remove')

@@ -1,7 +1,12 @@
-export { default as counter } from './counter'
-export { default as todo } from './todo'
+import counter from './counter'
+import todos from './todos'
 
-let combinedReducers = {
-  counter,
-  todo,
+export const GlobalReducerConstants = {
+  Counter: 'counter',
+  Todos: 'todos',
+}
+
+export default {
+  [GlobalReducerConstants.Counter]: counter,
+  [GlobalReducerConstants.Todos]: todos,
 }

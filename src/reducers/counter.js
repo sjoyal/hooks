@@ -1,4 +1,4 @@
-import createAction from './utils'
+import createAction from './utils/createAction'
 
 export const increment = createAction('hooks/counter/increment')
 export const decrement = createAction('hooks/counter/decrement')
