@@ -36,5 +36,6 @@
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0"
   },
-  "homepage": "https://github.com/sjoyal/hooks#readme"
+  "homepage": "https://github.com/sjoyal/hooks#readme",
+  "private": true
 }
