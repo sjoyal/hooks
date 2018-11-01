@@ -38,7 +38,7 @@ export default function Summary() {
             </p>
             <p>
               <strong>Completed Todos:&nbsp;</strong>
-              {!hasTasks && 'No completed tasks yet!'}
+              {!hasTasks && 'No completed tasks to display!'}
             </p>
             {hasTasks && (
               <ol>
