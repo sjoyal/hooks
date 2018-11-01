@@ -17,7 +17,7 @@ $ yarn
 $ yarn watch
 ```
 
-In a second shell
+...and in a second shell
 
 ```sh
 $ yarn serve
